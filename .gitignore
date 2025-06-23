@@ -25,4 +25,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tests
+test-results/
+tests/
+playwright-report/
+coverage/
+
+# claude files
 CLAUDE.md
+TODO.md
+PLAN.md
+
+# prettier
+.prettierignore

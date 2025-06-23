@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Github,
   Linkedin,
@@ -20,31 +20,48 @@ import {
   Target,
   Lightbulb,
   Zap,
-} from "lucide-react"
-import { useState } from "react"
+} from "lucide-react";
+import { useState } from "react";
 
 export default function AboutPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   const skillCategories = [
     {
       title: "Frontend",
       icon: <Code className="w-6 h-6" />,
-      skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Svelte"],
+      skills: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Svelte",
+      ],
       color: "bg-blue-100 text-blue-600",
     },
     {
       title: "Backend",
       icon: <Cog className="w-6 h-6" />,
-      skills: ["Node.js", "Express.js", "Python", "Django", "Flask", "PHP", "Laravel"],
+      skills: [
+        "Node.js",
+        "Express.js",
+        "Python",
+        "Django",
+        "Flask",
+        "PHP",
+        "Laravel",
+      ],
       color: "bg-green-100 text-green-600",
     },
     {
@@ -65,7 +82,7 @@ export default function AboutPage() {
       skills: ["Git", "GitHub", "Jira", "VS Code", "RESTful APIs", "GraphQL"],
       color: "bg-emerald-100 text-emerald-600",
     },
-  ]
+  ];
 
   const valueProps = [
     {
@@ -96,7 +113,7 @@ export default function AboutPage() {
         "I don't just meet expectations—I exceed them. Whether it's adding that extra feature or optimizing performance, I always go the extra mile for exceptional results.",
       color: "bg-orange-50 border-orange-200",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -110,29 +127,49 @@ export default function AboutPage() {
               className="flex items-center space-x-2"
             >
               <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">Alex Johnson</h1>
+                <h1 className="text-xl font-bold text-gray-900">
+                  Alex Johnson
+                </h1>
                 <span className="text-gray-500 hidden sm:inline">|</span>
-                <span className="text-gray-600 hidden sm:inline">Full Stack Developer</span>
+                <span className="text-gray-600 hidden sm:inline">
+                  Full Stack Developer
+                </span>
               </a>
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Home
               </a>
-              <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Projects
               </a>
               <span className="text-emerald-600 font-medium">About</span>
-              <a href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/contact"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Contact
               </a>
             </div>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
 
@@ -144,14 +181,25 @@ export default function AboutPage() {
               className="md:hidden py-4 border-t border-gray-100"
             >
               <div className="flex flex-col space-y-4">
-                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <a
+                  href="/"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   Home
                 </a>
-                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <a
+                  href="/"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   Projects
                 </a>
-                <span className="text-emerald-600 font-medium text-left">About</span>
-                <a href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <span className="text-emerald-600 font-medium text-left">
+                  About
+                </span>
+                <a
+                  href="/contact"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   Contact
                 </a>
               </div>
@@ -164,13 +212,18 @@ export default function AboutPage() {
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Hello, I'm <span className="text-emerald-600">Alex Johnson</span>
+                Hello, I'm{" "}
+                <span className="text-emerald-600">Alex Johnson</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                A passionate full-stack developer who believes great software comes from understanding people, not just
-                code.
+                A passionate full-stack developer who believes great software
+                comes from understanding people, not just code.
               </p>
             </motion.div>
 
@@ -206,7 +259,9 @@ export default function AboutPage() {
             className="space-y-8"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Story</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                My Story
+              </h2>
               <div className="w-24 h-1 bg-emerald-600 mx-auto"></div>
             </div>
 
@@ -218,10 +273,13 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                My journey into development began during college when I built my first website for a local nonprofit.
-                Seeing how a few lines of code could create something that genuinely helped people was a revelation.
-                That moment sparked a passion that has only grown stronger over the years—the realization that
-                technology, when crafted with care and purpose, has the power to transform businesses and improve lives.
+                My journey into development began during college when I built my
+                first website for a local nonprofit. Seeing how a few lines of
+                code could create something that genuinely helped people was a
+                revelation. That moment sparked a passion that has only grown
+                stronger over the years—the realization that technology, when
+                crafted with care and purpose, has the power to transform
+                businesses and improve lives.
               </motion.p>
 
               <motion.p
@@ -231,12 +289,15 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                As a full-stack developer, I don't just write code—I craft digital experiences. What sets me apart is my
-                genuine curiosity about your business and my commitment to understanding not just what you want to
-                build, but why you want to build it. I believe the best solutions come from meaningful conversations,
-                active listening, and a collaborative approach. My clients often tell me they appreciate my ability to
-                translate complex technical concepts into clear, actionable insights, and my dedication to going above
-                and beyond to ensure their success.
+                As a full-stack developer, I don't just write code—I craft
+                digital experiences. What sets me apart is my genuine curiosity
+                about your business and my commitment to understanding not just
+                what you want to build, but why you want to build it. I believe
+                the best solutions come from meaningful conversations, active
+                listening, and a collaborative approach. My clients often tell
+                me they appreciate my ability to translate complex technical
+                concepts into clear, actionable insights, and my dedication to
+                going above and beyond to ensure their success.
               </motion.p>
 
               <motion.p
@@ -246,11 +307,13 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed"
               >
-                When I'm not coding, you'll find me exploring hiking trails with my camera, experimenting with new
-                coffee brewing methods, or getting lost in a good sci-fi novel. I'm also an avid chess player and enjoy
-                the strategic thinking it requires—skills that surprisingly translate well to architecting software
-                solutions. These hobbies keep me grounded and often provide fresh perspectives that I bring back to my
-                development work.
+                When I'm not coding, you'll find me exploring hiking trails with
+                my camera, experimenting with new coffee brewing methods, or
+                getting lost in a good sci-fi novel. I'm also an avid chess
+                player and enjoy the strategic thinking it requires—skills that
+                surprisingly translate well to architecting software solutions.
+                These hobbies keep me grounded and often provide fresh
+                perspectives that I bring back to my development work.
               </motion.p>
             </div>
           </motion.div>
@@ -267,9 +330,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Technical Expertise</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              My Technical Expertise
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              A comprehensive toolkit built through years of hands-on experience and continuous learning
+              A comprehensive toolkit built through years of hands-on experience
+              and continuous learning
             </p>
           </motion.div>
 
@@ -285,14 +351,22 @@ export default function AboutPage() {
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${category.color} mr-4`}>
+                      <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center ${category.color} mr-4`}
+                      >
                         {category.icon}
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {category.title}
+                      </h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill) => (
-                        <Badge key={skill} variant="secondary" className="text-xs">
+                        <Badge
+                          key={skill}
+                          variant="secondary"
+                          className="text-xs"
+                        >
                           {skill}
                         </Badge>
                       ))}
@@ -315,9 +389,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Why Choose Me?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Me?
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              My commitment to your success goes beyond just delivering code—it's about building lasting partnerships
+              My commitment to your success goes beyond just delivering
+              code—it's about building lasting partnerships
             </p>
           </motion.div>
 
@@ -330,7 +407,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`h-full border-2 ${prop.color} hover:shadow-lg transition-all duration-300`}>
+                <Card
+                  className={`h-full border-2 ${prop.color} hover:shadow-lg transition-all duration-300`}
+                >
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -339,8 +418,12 @@ export default function AboutPage() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-3">{prop.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{prop.description}</p>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                          {prop.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {prop.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -364,8 +447,8 @@ export default function AboutPage() {
               Let's Build Something Amazing Together
             </h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Ready to turn your vision into reality? I'd love to hear about your project and discuss how we can make it
-              happen.
+              Ready to turn your vision into reality? I'd love to hear about
+              your project and discuss how we can make it happen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -378,7 +461,12 @@ export default function AboutPage() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-3 text-lg"
+                asChild
+              >
                 <a href="/">View My Work</a>
               </Button>
             </div>
@@ -392,20 +480,31 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
-              <p className="text-gray-400">Full Stack Developer crafting scalable web applications</p>
+              <p className="text-gray-400">
+                Full Stack Developer crafting scalable web applications
+              </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <a href="/" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   Home
                 </a>
-                <a href="/" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   Projects
                 </a>
                 <span className="block text-white">About</span>
-                <a href="/contact" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/contact"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   Contact
                 </a>
               </div>
@@ -414,15 +513,24 @@ export default function AboutPage() {
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="space-y-3">
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                   <span>Twitter</span>
                 </a>
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
                 </a>
@@ -431,10 +539,13 @@ export default function AboutPage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Alex Johnson. All Rights Reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              Reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,30 +1,40 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Github, Linkedin, Twitter, Mail, MapPin, Send, Menu, X, ArrowRight } from "lucide-react"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
+  Send,
+  Menu,
+  X,
+  ArrowRight,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    setIsSubmitting(false)
+    setIsSubmitting(false);
     // You can add success/error handling here
-  }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -38,29 +48,49 @@ export default function ContactPage() {
               className="flex items-center space-x-2"
             >
               <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">Alex Johnson</h1>
+                <h1 className="text-xl font-bold text-gray-900">
+                  Alex Johnson
+                </h1>
                 <span className="text-gray-500 hidden sm:inline">|</span>
-                <span className="text-gray-600 hidden sm:inline">Full Stack Developer</span>
+                <span className="text-gray-600 hidden sm:inline">
+                  Full Stack Developer
+                </span>
               </a>
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Home
               </a>
-              <a href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/projects"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Projects
               </a>
-              <a href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="/about"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 About
               </a>
               <span className="text-emerald-600 font-medium">Contact</span>
             </div>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
 
@@ -72,16 +102,27 @@ export default function ContactPage() {
               className="md:hidden py-4 border-t border-gray-100"
             >
               <div className="flex flex-col space-y-4">
-                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <a
+                  href="/"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   Home
                 </a>
-                <a href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <a
+                  href="/projects"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   Projects
                 </a>
-                <a href="/about" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                <a
+                  href="/about"
+                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                >
                   About
                 </a>
-                <span className="text-emerald-600 font-medium text-left">Contact</span>
+                <span className="text-emerald-600 font-medium text-left">
+                  Contact
+                </span>
               </div>
             </motion.div>
           )}
@@ -106,7 +147,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            I'm excited to hear about your project! Fill out the form below or use one of the options to get in touch.
+            I'm excited to hear about your project! Fill out the form below or
+            use one of the options to get in touch.
           </motion.p>
         </div>
       </section>
@@ -124,12 +166,17 @@ export default function ContactPage() {
             >
               <Card className="shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                    Send Me a Message
+                  </h2>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                        <Label
+                          htmlFor="name"
+                          className="text-sm font-medium text-gray-700"
+                        >
                           Name *
                         </Label>
                         <Input
@@ -142,7 +189,10 @@ export default function ContactPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                        <Label
+                          htmlFor="email"
+                          className="text-sm font-medium text-gray-700"
+                        >
                           Email *
                         </Label>
                         <Input
@@ -157,7 +207,10 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="subject"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Subject *
                       </Label>
                       <Input
@@ -171,7 +224,10 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="message"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Message *
                       </Label>
                       <Textarea
@@ -212,10 +268,13 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Or Find Me Here</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Or Find Me Here
+                </h2>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  Prefer a more direct approach? Feel free to reach out through any of these channels. I typically
-                  respond within 24 hours during business days.
+                  Prefer a more direct approach? Feel free to reach out through
+                  any of these channels. I typically respond within 24 hours
+                  during business days.
                 </p>
               </div>
 
@@ -234,7 +293,9 @@ export default function ContactPage() {
                           <Mail className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Email Me Directly</h3>
+                          <h3 className="font-semibold text-gray-900 mb-1">
+                            Email Me Directly
+                          </h3>
                           <a
                             href="mailto:hello@alexjohnson.dev"
                             className="text-emerald-600 hover:text-emerald-700 transition-colors"
@@ -261,7 +322,9 @@ export default function ContactPage() {
                           <Linkedin className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Connect on LinkedIn</h3>
+                          <h3 className="font-semibold text-gray-900 mb-1">
+                            Connect on LinkedIn
+                          </h3>
                           <a
                             href="https://linkedin.com/in/alexjohnson-dev"
                             target="_blank"
@@ -290,9 +353,15 @@ export default function ContactPage() {
                           <MapPin className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                          <p className="text-gray-600">Based in Bali, Indonesia</p>
-                          <p className="text-sm text-gray-500">(Available Globally)</p>
+                          <h3 className="font-semibold text-gray-900 mb-1">
+                            Location
+                          </h3>
+                          <p className="text-gray-600">
+                            Based in Bali, Indonesia
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            (Available Globally)
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -308,11 +377,14 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-emerald-50 rounded-lg p-6 border border-emerald-200"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">Quick Response Guaranteed</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Quick Response Guaranteed
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  I understand that timing is crucial for your projects. I typically respond to all inquiries within 24
-                  hours during business days, and often much sooner. For urgent matters, feel free to mention it in your
-                  message subject line.
+                  I understand that timing is crucial for your projects. I
+                  typically respond to all inquiries within 24 hours during
+                  business days, and often much sooner. For urgent matters, feel
+                  free to mention it in your message subject line.
                 </p>
               </motion.div>
             </motion.div>
@@ -329,10 +401,12 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Ready to Start Your Project?
+            </h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Whether you have a detailed brief or just an idea, I'd love to discuss how we can bring your vision to
-              life.
+              Whether you have a detailed brief or just an idea, I'd love to
+              discuss how we can bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -345,7 +419,12 @@ export default function ContactPage() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-3 text-lg"
+                asChild
+              >
                 <a href="/about">Learn More About Me</a>
               </Button>
             </div>
@@ -359,19 +438,30 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
-              <p className="text-gray-400">Full Stack Developer crafting scalable web applications</p>
+              <p className="text-gray-400">
+                Full Stack Developer crafting scalable web applications
+              </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <a href="/" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   Home
                 </a>
-                <a href="/projects" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/projects"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   Projects
                 </a>
-                <a href="/about" className="block text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="/about"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
                   About
                 </a>
                 <span className="block text-white">Contact</span>
@@ -381,15 +471,24 @@ export default function ContactPage() {
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="space-y-3">
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                   <span>Twitter</span>
                 </a>
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
-                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
                 </a>
@@ -398,10 +497,13 @@ export default function ContactPage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Alex Johnson. All Rights Reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              Reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
