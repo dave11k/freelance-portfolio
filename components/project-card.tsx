@@ -61,20 +61,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                View Case Study
-              </Button>
-              <Button
-                variant="ghost"
-                className={`justify-start ${!project.isPublic ? "opacity-50 cursor-not-allowed" : ""}`}
-                disabled={!project.isPublic}
-              >
                 <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
+                View Project
               </Button>
               <Button
                 variant="ghost"
-                className={`justify-start ${!project.isPublic ? "opacity-50 cursor-not-allowed" : ""}`}
-                disabled={!project.isPublic}
+                className={`justify-start ${!project.githubUrl ? "opacity-50 cursor-not-allowed" : ""}`}
+                disabled={!project.githubUrl}
+                onClick={() => {
+                  if (project.githubUrl) {
+                    window.open(project.githubUrl, "_blank");
+                  }
+                }}
               >
                 <Github className="w-4 h-4 mr-2" />
                 View Code

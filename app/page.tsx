@@ -68,10 +68,13 @@ export default function HomePage() {
     "Node.js",
     "Python",
     "PostgreSQL",
+    "Java",
+    "Spring Boot",
     "MongoDB",
     "AWS",
     "Docker",
     "GraphQL",
+    "Web Sockets",
   ];
 
   return (
@@ -190,7 +193,7 @@ export default function HomePage() {
             results.
             <br />
             <br />
-            I’m passionate about continuous learning and always eager to explore
+            I'm passionate about continuous learning and always eager to explore
             new technologies. My focus is on building smart, practical software
             that stands up in the real world.
           </motion.p>
@@ -280,10 +283,8 @@ export default function HomePage() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-600 leading-relaxed">
-                As a full-stack developer, I build end-to-end web solutions that
-                combine beautiful user interfaces with robust backend systems.
-                I'm passionate about creating scalable applications that solve
-                real-world problems and deliver exceptional user experiences.
+                I have gathered a wide range of skills and experience over the
+                years. These are some of the areas I can help you with.
               </p>
 
               <div className="space-y-4">
@@ -348,11 +349,14 @@ export default function HomePage() {
               how we can bring your vision to life.
             </p>
             <Button
+              asChild
               size="lg"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg group"
             >
-              Get in Touch
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="/contact">
+                Get in Touch
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </motion.div>
         </div>

@@ -212,7 +212,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Hello, I'm <span className="text-emerald-600">David Kiely</span>
+                Hello, I'm <span className="text-emerald-600">David</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 A passionate full-stack developer who believes great software
