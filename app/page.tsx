@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import ProjectCard from "@/components/project-card";
+import { projects } from "@/lib/projects";
 import {
   Github,
   Linkedin,
   Twitter,
-  ExternalLink,
   Code,
   Database,
   Cloud,
@@ -32,63 +32,6 @@ export default function HomePage() {
     }
     setIsMenuOpen(false);
   };
-
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution with real-time inventory management and payment processing.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-    },
-    {
-      id: 2,
-      title: "Task Management Dashboard",
-      description:
-        "Internal productivity tool with team collaboration features and advanced analytics.",
-      technologies: ["Next.js", "TypeScript", "Prisma", "Redis"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: false,
-    },
-    {
-      id: 3,
-      title: "Real-time Chat Application",
-      description:
-        "Scalable messaging platform with WebSocket integration and file sharing capabilities.",
-      technologies: ["React", "Socket.io", "MongoDB", "AWS S3"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-    },
-    {
-      id: 4,
-      title: "API Gateway Service",
-      description:
-        "Microservices architecture with automated deployment and monitoring solutions.",
-      technologies: ["Node.js", "Docker", "Kubernetes", "GraphQL"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: false,
-    },
-    {
-      id: 5,
-      title: "Data Visualization Tool",
-      description:
-        "Interactive dashboard for complex data analysis with real-time updates and exports.",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-    },
-    {
-      id: 6,
-      title: "Learning Management System",
-      description:
-        "Educational platform with course management, progress tracking, and interactive assessments.",
-      technologies: ["React", "Express.js", "MongoDB", "Socket.io"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-    },
-  ];
 
   const services = [
     {
@@ -235,15 +178,21 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 mb-8 max-w-5xl mx-auto leading-relaxed"
           >
-            I have 6 years of professional experience building efficient, user-friendly, 
-            and high-performing web applications. I turn complex ideas into clean and scalable solutions.
-            <br /><br />
-            My core expertise lies in modern JavaScript development, particularly with Vue and React, 
-            and a strong backend foundation in Java and Node. I've collaborated with a variety of clients on fast-paced 
-            teams, consistently delivering reliable, effective results.
-            <br /><br />
-            I’m passionate about continuous learning and always eager to explore new technologies. My focus is on building smart, 
-            practical software that stands up in the real world.
+            I have 6 years of professional experience building efficient,
+            user-friendly, and high-performing web applications. I turn complex
+            ideas into clean and scalable solutions.
+            <br />
+            <br />
+            My core expertise lies in modern JavaScript development,
+            particularly with Vue and React, and a strong backend foundation in
+            Java and Node. I've collaborated with a variety of clients on
+            fast-paced teams, consistently delivering reliable, effective
+            results.
+            <br />
+            <br />
+            I’m passionate about continuous learning and always eager to explore
+            new technologies. My focus is on building smart, practical software
+            that stands up in the real world.
           </motion.p>
 
           <motion.div
@@ -285,68 +234,8 @@ export default function HomePage() {
           </motion.div>
 
           <div className="space-y-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                    <div className="relative overflow-hidden lg:col-span-1">
-                      <img
-                        src={project.videoUrl || "/placeholder.svg"}
-                        alt={project.title}
-                        className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                    </div>
-
-                    <CardContent className="p-8 lg:col-span-2 flex flex-col justify-center">
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2 lg:mb-0">
-                          {project.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="secondary"
-                              className="text-xs"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                          View Case Study
-                        </Button>
-                        {project.isPublic && (
-                          <>
-                            <Button variant="ghost" className="justify-start">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Live Demo
-                            </Button>
-                            <Button variant="ghost" className="justify-start">
-                              <Github className="w-4 h-4 mr-2" />
-                              View Code
-                            </Button>
-                          </>
-                        )}
-                      </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              </motion.div>
+            {projects.slice(0, 6).map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>

@@ -2,132 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  ExternalLink,
-  Menu,
-  X,
-  ArrowRight,
-} from "lucide-react";
+import ProjectCard from "@/components/project-card";
+import { projects } from "@/lib/projects";
+import { Github, Linkedin, Twitter, Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export default function ProjectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution with real-time inventory management, secure payment processing, and comprehensive admin dashboard for seamless online retail operations.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Web Application",
-    },
-    {
-      id: 2,
-      title: "Task Management Dashboard",
-      description:
-        "Internal productivity tool with team collaboration features, advanced analytics, and real-time notifications for enterprise clients to streamline workflow management.",
-      technologies: ["Next.js", "TypeScript", "Prisma", "Redis", "Socket.io"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: false,
-      category: "Internal Tool",
-    },
-    {
-      id: 3,
-      title: "Real-time Chat Application",
-      description:
-        "Scalable messaging platform with WebSocket integration, file sharing capabilities, and end-to-end encryption for secure communication across teams and organizations.",
-      technologies: ["React", "Socket.io", "MongoDB", "AWS S3", "JWT"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Web Application",
-    },
-    {
-      id: 4,
-      title: "API Gateway Service",
-      description:
-        "Microservices architecture with automated deployment, monitoring solutions, and comprehensive API documentation for scalable backend systems and service orchestration.",
-      technologies: [
-        "Node.js",
-        "Docker",
-        "Kubernetes",
-        "GraphQL",
-        "Prometheus",
-      ],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: false,
-      category: "Backend Service",
-    },
-    {
-      id: 5,
-      title: "Data Visualization Tool",
-      description:
-        "Interactive dashboard for complex data analysis with real-time updates, custom chart generation, and automated report exports for business intelligence and analytics.",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Data Analytics",
-    },
-    {
-      id: 6,
-      title: "Learning Management System",
-      description:
-        "Educational platform with course management, progress tracking, interactive assessments, and video streaming capabilities for online learning and training programs.",
-      technologies: ["React", "Express.js", "MongoDB", "Socket.io", "AWS"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Web Application",
-    },
-    {
-      id: 7,
-      title: "Inventory Management System",
-      description:
-        "Comprehensive inventory tracking solution with barcode scanning, automated reordering, and detailed analytics for retail businesses to optimize stock management.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "MySQL",
-        "Tailwind CSS",
-        "Vercel",
-      ],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: false,
-      category: "Business Tool",
-    },
-    {
-      id: 8,
-      title: "Social Media Analytics Platform",
-      description:
-        "Multi-platform social media monitoring tool with sentiment analysis, engagement tracking, and automated reporting features for brand management and marketing insights.",
-      technologies: ["Python", "Django", "React", "PostgreSQL", "Celery"],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Analytics Platform",
-    },
-    {
-      id: 9,
-      title: "Restaurant Ordering System",
-      description:
-        "Complete restaurant management solution with online ordering, kitchen display system, and integrated payment processing for streamlined food service operations.",
-      technologies: [
-        "React Native",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Firebase",
-      ],
-      videoUrl: "/placeholder.svg?height=300&width=400",
-      isPublic: true,
-      category: "Mobile Application",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -250,79 +132,7 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-8">
             {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                    <div className="relative overflow-hidden lg:col-span-1">
-                      <img
-                        src={project.videoUrl || "/placeholder.svg"}
-                        alt={project.title}
-                        className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                      <div className="absolute top-4 left-4">
-                        <Badge
-                          variant="secondary"
-                          className="bg-white/90 text-gray-700 text-xs"
-                        >
-                          {project.category}
-                        </Badge>
-                      </div>
-                    </div>
-
-                    <CardContent className="p-8 lg:col-span-2 flex flex-col justify-center">
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2 lg:mb-0">
-                          {project.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="secondary"
-                              className="text-xs"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                          View Case Study
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className={`justify-start ${!project.isPublic ? "opacity-50 cursor-not-allowed" : ""}`}
-                          disabled={!project.isPublic}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className={`justify-start ${!project.isPublic ? "opacity-50 cursor-not-allowed" : ""}`}
-                          disabled={!project.isPublic}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          View Code
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              </motion.div>
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>

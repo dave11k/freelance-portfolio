@@ -52,13 +52,7 @@ export default function AboutPage() {
     {
       title: "Backend",
       icon: <Cog className="w-6 h-6" />,
-      skills: [
-        "Java",
-        "Spring Boot",
-        "Node.js",
-        "Express.js",
-        "Python"
-      ],
+      skills: ["Java", "Spring Boot", "Node.js", "Express.js", "Python"],
       color: "bg-green-100 text-green-600",
     },
     {
@@ -70,7 +64,18 @@ export default function AboutPage() {
     {
       title: "Tools & Technologies",
       icon: <Layers className="w-6 h-6" />,
-      skills: ["Git", "RESTful APIs", "Web Sockets", "GraphQL", "Docker", "Kubernetes", "CI/CD", "Agile", "Test-Driven Development", "Microservices"],
+      skills: [
+        "Git",
+        "RESTful APIs",
+        "Web Sockets",
+        "GraphQL",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Agile",
+        "Test-Driven Development",
+        "Microservices",
+      ],
       color: "bg-emerald-100 text-emerald-600",
     },
   ];
@@ -261,15 +266,17 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                My passion for technology and computers began early, leading me to pursue Software 
-                Development at university. There, I built a strong foundation in programming and 
-                software engineering. A pivotal 9-month internship at McAfee gave me hands-on 
-                experience developing enterprise desktop tools, and I graduated with first-class 
-                honors, achieving the highest grade in my final-year project. I then spent two 
-                years at Client Solutions a consultancy company based in Ireland. Here I learned 
-                fast-paced, enterprise level software development using Agile and test-driven 
-                development for high-stakes clients, while also cultivating essential client 
-                relationship management skills.
+                My passion for technology and computers began early, leading me
+                to pursue Software Development at university. There, I built a
+                strong foundation in programming and software engineering. A
+                pivotal 9-month internship at McAfee gave me hands-on experience
+                developing enterprise desktop tools, and I graduated with
+                first-class honors, achieving the highest grade in my final-year
+                project. I then spent two years at Client Solutions a
+                consultancy company based in Ireland. Here I learned fast-paced,
+                enterprise level software development using Agile and
+                test-driven development for high-stakes clients, while also
+                cultivating essential client relationship management skills.
               </motion.p>
 
               <motion.p
@@ -279,16 +286,20 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                I spent the next four years at DigiWheel, a gaming industry startup, where I was 
-                instrumental in building a global casino gaming platform from scratch that earned 
-                multiple international casino game show awards. This experience significantly 
-                deepened my expertise in developing complex, multi-project platforms. I collaborated 
-                closely with our senior engineer, deepening my development fundamentals and learning 
-                advanced methods. I also mentored two junior developers. Over the past year, I've 
-                expanded into freelance web development and design. I found immense fulfillment in 
-                helping clients achieve their goals and exploring new technologies that I have not 
-                had the chance to work with yet in the process. I'm keen to continue these 
-                interesting projects while also advancing my career with full-time work.
+                I spent the next four years at DigiWheel, a gaming industry
+                startup, where I was instrumental in building a global casino
+                gaming platform from scratch that earned multiple international
+                casino game show awards. This experience significantly deepened
+                my expertise in developing complex, multi-project platforms. I
+                collaborated closely with our senior engineer, deepening my
+                development fundamentals and learning advanced methods. I also
+                mentored two junior developers. Over the past year, I've
+                expanded into freelance web development and design. I found
+                immense fulfillment in helping clients achieve their goals and
+                exploring new technologies that I have not had the chance to
+                work with yet in the process. I'm keen to continue these
+                interesting projects while also advancing my career with
+                full-time work.
               </motion.p>
 
               <motion.p
@@ -298,12 +309,13 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed"
               >
-                What truly sets me apart is my genuine curiosity about your business and my 
-                commitment to understanding the why behind your projects, not just the what. I 
-                believe the best solutions stem from meaningful conversations, active listening, 
-                and a truly collaborative approach. Clients consistently appreciate my ability to 
-                translate complex technical concepts into clear, actionable insights and my 
-                dedication to ensuring their success. 
+                What truly sets me apart is my genuine curiosity about your
+                business and my commitment to understanding the why behind your
+                projects, not just the what. I believe the best solutions stem
+                from meaningful conversations, active listening, and a truly
+                collaborative approach. Clients consistently appreciate my
+                ability to translate complex technical concepts into clear,
+                actionable insights and my dedication to ensuring their success.
               </motion.p>
 
               <motion.p
@@ -313,8 +325,9 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed"
               >
-                Outside of work, I stay active with jiu-jitsu, boxing, and running. Hobbies that 
-                keep me grounded and often spark fresh perspectives for my development work.               
+                Outside of work, I stay active with jiu-jitsu, boxing, and
+                running. Hobbies that keep me grounded and often spark fresh
+                perspectives for my development work.
               </motion.p>
             </div>
           </motion.div>
@@ -394,8 +407,8 @@ export default function AboutPage() {
               Why Choose Me?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              My commitment to your success goes beyond just delivering
-              code, it's about building lasting partnerships.
+              My commitment to your success goes beyond just delivering code,
+              it's about building lasting partnerships.
             </p>
           </motion.div>
 
