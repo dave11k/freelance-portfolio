@@ -141,9 +141,7 @@ export default function ProjectsPage() {
               className="flex items-center space-x-2"
             >
               <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">
-                  Alex Johnson
-                </h1>
+                <h1 className="text-xl font-bold text-gray-900">David Kiely</h1>
                 <span className="text-gray-500 hidden sm:inline">|</span>
                 <span className="text-gray-600 hidden sm:inline">
                   Full Stack Developer
@@ -250,22 +248,6 @@ export default function ProjectsPage() {
       {/* All Projects Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              All Projects
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              From web applications to mobile solutions, each project represents
-              a unique challenge and innovative solution
-            </p>
-          </motion.div>
-
           <div className="space-y-8">
             {projects.map((project, index) => (
               <motion.div
@@ -391,7 +373,7 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
+              <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
               <p className="text-gray-400">
                 Full Stack Developer crafting scalable web applications
               </p>
@@ -452,7 +434,7 @@ export default function ProjectsPage() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              &copy; {new Date().getFullYear()} David Kiely. All Rights
               Reserved.
             </p>
           </div>

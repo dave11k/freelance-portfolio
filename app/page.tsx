@@ -142,7 +142,7 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-2"
             >
-              <h1 className="text-xl font-bold text-gray-900">Alex Johnson</h1>
+              <h1 className="text-xl font-bold text-gray-900">David Kiely</h1>
               <span className="text-gray-500 hidden sm:inline">|</span>
               <span className="text-gray-600 hidden sm:inline">
                 Full Stack Developer
@@ -218,14 +218,14 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center mt-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-10 leading-tight"
           >
-            Full Stack Developer Crafting{" "}
+            Full Stack Developer Building{" "}
             <span className="text-emerald-600">Scalable Web Applications</span>
           </motion.h1>
 
@@ -233,11 +233,17 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 mb-8 max-w-5xl mx-auto leading-relaxed"
           >
-            I specialize in creating efficient, user-friendly, and performant
-            web applications from front to back, turning complex ideas into
-            elegant digital solutions.
+            I have 6 years of professional experience building efficient, user-friendly, 
+            and high-performing web applications. I turn complex ideas into clean and scalable solutions.
+            <br /><br />
+            My core expertise lies in modern JavaScript development, particularly with Vue and React, 
+            and a strong backend foundation in Java and Node. I've collaborated with a variety of clients on fast-paced 
+            teams, consistently delivering reliable, effective results.
+            <br /><br />
+            I’m passionate about continuous learning and always eager to explore new technologies. My focus is on building smart, 
+            practical software that stands up in the real world.
           </motion.p>
 
           <motion.div
@@ -246,12 +252,14 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Button
-              onClick={() => scrollToSection("projects")}
+              asChild
               size="lg"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg group"
             >
-              View My Work
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="/contact">
+                Get In Touch
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </motion.div>
         </div>
@@ -272,7 +280,7 @@ export default function HomePage() {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A selection of projects showcasing my expertise in full-stack
-              development
+              development.
             </p>
           </motion.div>
 
@@ -319,10 +327,7 @@ export default function HomePage() {
                       </p>
 
                       <div className="flex flex-col sm:flex-row gap-3">
-                        <Button
-                          variant="outline"
-                          className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50"
-                        >
+                        <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
                           View Case Study
                         </Button>
                         {project.isPublic && (
@@ -372,7 +377,7 @@ export default function HomePage() {
               <div className="relative">
                 <img
                   src="/placeholder.svg?height=400&width=400"
-                  alt="Alex Johnson - Full Stack Developer"
+                  alt="David Kiely - Full Stack Developer"
                   className="w-80 h-80 rounded-2xl object-cover mx-auto shadow-2xl"
                 />
               </div>
@@ -469,7 +474,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
+              <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
               <p className="text-gray-400">
                 Full Stack Developer crafting scalable web applications
               </p>
@@ -529,7 +534,7 @@ export default function HomePage() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              &copy; {new Date().getFullYear()} David Kiely. All Rights
               Reserved.
             </p>
           </div>

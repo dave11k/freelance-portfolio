@@ -39,14 +39,13 @@ export default function AboutPage() {
       title: "Frontend",
       icon: <Code className="w-6 h-6" />,
       skills: [
+        "JavaScript",
         "React",
         "Next.js",
-        "JavaScript",
         "TypeScript",
-        "HTML5",
-        "CSS3",
         "Tailwind CSS",
-        "Svelte",
+        "Vue.js",
+        "GSAP",
       ],
       color: "bg-blue-100 text-blue-600",
     },
@@ -54,32 +53,24 @@ export default function AboutPage() {
       title: "Backend",
       icon: <Cog className="w-6 h-6" />,
       skills: [
+        "Java",
+        "Spring Boot",
         "Node.js",
         "Express.js",
-        "Python",
-        "Django",
-        "Flask",
-        "PHP",
-        "Laravel",
+        "Python"
       ],
       color: "bg-green-100 text-green-600",
     },
     {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
-      skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite"],
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
       color: "bg-purple-100 text-purple-600",
     },
     {
-      title: "Cloud & DevOps",
-      icon: <Cloud className="w-6 h-6" />,
-      skills: ["AWS (EC2, S3, Lambda)", "Docker", "Vercel", "Netlify", "CI/CD"],
-      color: "bg-orange-100 text-orange-600",
-    },
-    {
-      title: "Tools & Other",
+      title: "Tools & Technologies",
       icon: <Layers className="w-6 h-6" />,
-      skills: ["Git", "GitHub", "Jira", "VS Code", "RESTful APIs", "GraphQL"],
+      skills: ["Git", "RESTful APIs", "Web Sockets", "GraphQL", "Docker", "Kubernetes", "CI/CD", "Agile", "Test-Driven Development", "Microservices"],
       color: "bg-emerald-100 text-emerald-600",
     },
   ];
@@ -103,14 +94,14 @@ export default function AboutPage() {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Creative Problem Solver",
       description:
-        "Complex challenges don't intimidate me—they inspire me. I approach each problem with creativity and persistence until we find the perfect solution.",
+        "Complex challenges don't intimidate me, they inspire me. I approach each problem with creativity and persistence until we find the perfect solution.",
       color: "bg-purple-50 border-purple-200",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Go-Getter Mentality",
       description:
-        "I don't just meet expectations—I exceed them. Whether it's adding that extra feature or optimizing performance, I always go the extra mile for exceptional results.",
+        "I exceed expectations for every client. Whether it's adding that extra feature or optimizing performance, I always go the extra mile for exceptional results.",
       color: "bg-orange-50 border-orange-200",
     },
   ];
@@ -127,9 +118,7 @@ export default function AboutPage() {
               className="flex items-center space-x-2"
             >
               <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">
-                  Alex Johnson
-                </h1>
+                <h1 className="text-xl font-bold text-gray-900">David Kiely</h1>
                 <span className="text-gray-500 hidden sm:inline">|</span>
                 <span className="text-gray-600 hidden sm:inline">
                   Full Stack Developer
@@ -218,8 +207,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Hello, I'm{" "}
-                <span className="text-emerald-600">Alex Johnson</span>
+                Hello, I'm <span className="text-emerald-600">David Kiely</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 A passionate full-stack developer who believes great software
@@ -236,7 +224,7 @@ export default function AboutPage() {
               <div className="relative">
                 <img
                   src="/placeholder.svg?height=500&width=400"
-                  alt="Alex Johnson - Full Stack Developer"
+                  alt="David Kiely - Full Stack Developer"
                   className="w-80 h-96 rounded-2xl object-cover shadow-2xl"
                 />
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center">
@@ -273,13 +261,15 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                My journey into development began during college when I built my
-                first website for a local nonprofit. Seeing how a few lines of
-                code could create something that genuinely helped people was a
-                revelation. That moment sparked a passion that has only grown
-                stronger over the years—the realization that technology, when
-                crafted with care and purpose, has the power to transform
-                businesses and improve lives.
+                My passion for technology and computers began early, leading me to pursue Software 
+                Development at university. There, I built a strong foundation in programming and 
+                software engineering. A pivotal 9-month internship at McAfee gave me hands-on 
+                experience developing enterprise desktop tools, and I graduated with first-class 
+                honors, achieving the highest grade in my final-year project. I then spent two 
+                years at Client Solutions a consultancy company based in Ireland. Here I learned 
+                fast-paced, enterprise level software development using Agile and test-driven 
+                development for high-stakes clients, while also cultivating essential client 
+                relationship management skills.
               </motion.p>
 
               <motion.p
@@ -289,15 +279,16 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed mb-6"
               >
-                As a full-stack developer, I don't just write code—I craft
-                digital experiences. What sets me apart is my genuine curiosity
-                about your business and my commitment to understanding not just
-                what you want to build, but why you want to build it. I believe
-                the best solutions come from meaningful conversations, active
-                listening, and a collaborative approach. My clients often tell
-                me they appreciate my ability to translate complex technical
-                concepts into clear, actionable insights, and my dedication to
-                going above and beyond to ensure their success.
+                I spent the next four years at DigiWheel, a gaming industry startup, where I was 
+                instrumental in building a global casino gaming platform from scratch that earned 
+                multiple international casino game show awards. This experience significantly 
+                deepened my expertise in developing complex, multi-project platforms. I collaborated 
+                closely with our senior engineer, deepening my development fundamentals and learning 
+                advanced methods. I also mentored two junior developers. Over the past year, I've 
+                expanded into freelance web development and design. I found immense fulfillment in 
+                helping clients achieve their goals and exploring new technologies that I have not 
+                had the chance to work with yet in the process. I'm keen to continue these 
+                interesting projects while also advancing my career with full-time work.
               </motion.p>
 
               <motion.p
@@ -307,13 +298,23 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-gray-700 leading-relaxed"
               >
-                When I'm not coding, you'll find me exploring hiking trails with
-                my camera, experimenting with new coffee brewing methods, or
-                getting lost in a good sci-fi novel. I'm also an avid chess
-                player and enjoy the strategic thinking it requires—skills that
-                surprisingly translate well to architecting software solutions.
-                These hobbies keep me grounded and often provide fresh
-                perspectives that I bring back to my development work.
+                What truly sets me apart is my genuine curiosity about your business and my 
+                commitment to understanding the why behind your projects, not just the what. I 
+                believe the best solutions stem from meaningful conversations, active listening, 
+                and a truly collaborative approach. Clients consistently appreciate my ability to 
+                translate complex technical concepts into clear, actionable insights and my 
+                dedication to ensuring their success. 
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-gray-700 leading-relaxed"
+              >
+                Outside of work, I stay active with jiu-jitsu, boxing, and running. Hobbies that 
+                keep me grounded and often spark fresh perspectives for my development work.               
               </motion.p>
             </div>
           </motion.div>
@@ -335,11 +336,11 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A comprehensive toolkit built through years of hands-on experience
-              and continuous learning
+              and continuous learning.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
@@ -394,7 +395,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               My commitment to your success goes beyond just delivering
-              code—it's about building lasting partnerships
+              code, it's about building lasting partnerships.
             </p>
           </motion.div>
 
@@ -467,7 +468,7 @@ export default function AboutPage() {
                 className="px-8 py-3 text-lg"
                 asChild
               >
-                <a href="/">View My Work</a>
+                <a href="/projects">View My Work</a>
               </Button>
             </div>
           </motion.div>
@@ -479,7 +480,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
+              <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
               <p className="text-gray-400">
                 Full Stack Developer crafting scalable web applications
               </p>
@@ -540,7 +541,7 @@ export default function AboutPage() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              &copy; {new Date().getFullYear()} David Kiely. All Rights
               Reserved.
             </p>
           </div>

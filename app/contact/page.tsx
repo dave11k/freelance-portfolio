@@ -48,9 +48,7 @@ export default function ContactPage() {
               className="flex items-center space-x-2"
             >
               <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">
-                  Alex Johnson
-                </h1>
+                <h1 className="text-xl font-bold text-gray-900">David Kiely</h1>
                 <span className="text-gray-500 hidden sm:inline">|</span>
                 <span className="text-gray-600 hidden sm:inline">
                   Full Stack Developer
@@ -437,7 +435,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
+              <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
               <p className="text-gray-400">
                 Full Stack Developer crafting scalable web applications
               </p>
@@ -498,7 +496,7 @@ export default function ContactPage() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} Alex Johnson. All Rights
+              &copy; {new Date().getFullYear()} David Kiely. All Rights
               Reserved.
             </p>
           </div>
