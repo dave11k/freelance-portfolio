@@ -1,0 +1,440 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  ArrowRight,
+  Menu,
+  X,
+  Code,
+  Database,
+  Cloud,
+  Cog,
+  Layers,
+  Users,
+  Target,
+  Lightbulb,
+  Zap,
+} from "lucide-react"
+import { useState } from "react"
+
+export default function AboutPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsMenuOpen(false)
+  }
+
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: <Code className="w-6 h-6" />,
+      skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Svelte"],
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      title: "Backend",
+      icon: <Cog className="w-6 h-6" />,
+      skills: ["Node.js", "Express.js", "Python", "Django", "Flask", "PHP", "Laravel"],
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      title: "Databases",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite"],
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: <Cloud className="w-6 h-6" />,
+      skills: ["AWS (EC2, S3, Lambda)", "Docker", "Vercel", "Netlify", "CI/CD"],
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      title: "Tools & Other",
+      icon: <Layers className="w-6 h-6" />,
+      skills: ["Git", "GitHub", "Jira", "VS Code", "RESTful APIs", "GraphQL"],
+      color: "bg-emerald-100 text-emerald-600",
+    },
+  ]
+
+  const valueProps = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Client-Centric Approach",
+      description:
+        "I take the time to truly understand your vision, goals, and challenges. Clear communication and regular updates ensure we're always aligned throughout the project.",
+      color: "bg-blue-50 border-blue-200",
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Quality & Scalability",
+      description:
+        "Every line of code is written with the future in mind. I build robust, maintainable solutions that can grow with your business and stand the test of time.",
+      color: "bg-green-50 border-green-200",
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Creative Problem Solver",
+      description:
+        "Complex challenges don't intimidate me—they inspire me. I approach each problem with creativity and persistence until we find the perfect solution.",
+      color: "bg-purple-50 border-purple-200",
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Go-Getter Mentality",
+      description:
+        "I don't just meet expectations—I exceed them. Whether it's adding that extra feature or optimizing performance, I always go the extra mile for exceptional results.",
+      color: "bg-orange-50 border-orange-200",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-2"
+            >
+              <a href="/" className="flex items-center space-x-2">
+                <h1 className="text-xl font-bold text-gray-900">Alex Johnson</h1>
+                <span className="text-gray-500 hidden sm:inline">|</span>
+                <span className="text-gray-600 hidden sm:inline">Full Stack Developer</span>
+              </a>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Home
+              </a>
+              <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Projects
+              </a>
+              <span className="text-emerald-600 font-medium">About</span>
+              <a href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Contact
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="md:hidden py-4 border-t border-gray-100"
+            >
+              <div className="flex flex-col space-y-4">
+                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  Home
+                </a>
+                <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  Projects
+                </a>
+                <span className="text-emerald-600 font-medium text-left">About</span>
+                <a href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  Contact
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Hello, I'm <span className="text-emerald-600">Alex Johnson</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                A passionate full-stack developer who believes great software comes from understanding people, not just
+                code.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="relative">
+                <img
+                  src="/placeholder.svg?height=500&width=400"
+                  alt="Alex Johnson - Full Stack Developer"
+                  className="w-80 h-96 rounded-2xl object-cover shadow-2xl"
+                />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <Code className="w-12 h-12 text-emerald-600" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Story</h2>
+              <div className="w-24 h-1 bg-emerald-600 mx-auto"></div>
+            </div>
+
+            <div className="prose prose-lg max-w-none">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-gray-700 leading-relaxed mb-6"
+              >
+                My journey into development began during college when I built my first website for a local nonprofit.
+                Seeing how a few lines of code could create something that genuinely helped people was a revelation.
+                That moment sparked a passion that has only grown stronger over the years—the realization that
+                technology, when crafted with care and purpose, has the power to transform businesses and improve lives.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-gray-700 leading-relaxed mb-6"
+              >
+                As a full-stack developer, I don't just write code—I craft digital experiences. What sets me apart is my
+                genuine curiosity about your business and my commitment to understanding not just what you want to
+                build, but why you want to build it. I believe the best solutions come from meaningful conversations,
+                active listening, and a collaborative approach. My clients often tell me they appreciate my ability to
+                translate complex technical concepts into clear, actionable insights, and my dedication to going above
+                and beyond to ensure their success.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-gray-700 leading-relaxed"
+              >
+                When I'm not coding, you'll find me exploring hiking trails with my camera, experimenting with new
+                coffee brewing methods, or getting lost in a good sci-fi novel. I'm also an avid chess player and enjoy
+                the strategic thinking it requires—skills that surprisingly translate well to architecting software
+                solutions. These hobbies keep me grounded and often provide fresh perspectives that I bring back to my
+                development work.
+              </motion.p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Technical Expertise</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              A comprehensive toolkit built through years of hands-on experience and continuous learning
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${category.color} mr-4`}>
+                        {category.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill) => (
+                        <Badge key={skill} variant="secondary" className="text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Why Choose Me?</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              My commitment to your success goes beyond just delivering code—it's about building lasting partnerships
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {valueProps.map((prop, index) => (
+              <motion.div
+                key={prop.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className={`h-full border-2 ${prop.color} hover:shadow-lg transition-all duration-300`}>
+                  <CardContent className="p-8">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center text-gray-700 shadow-sm">
+                          {prop.icon}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">{prop.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{prop.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-emerald-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Let's Build Something Amazing Together
+            </h3>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Ready to turn your vision into reality? I'd love to hear about your project and discuss how we can make it
+              happen.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg group"
+                asChild
+              >
+                <a href="/contact">
+                  Start a Conversation
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="px-8 py-3 text-lg" asChild>
+                <a href="/">View My Work</a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Alex Johnson</h3>
+              <p className="text-gray-400">Full Stack Developer crafting scalable web applications</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <a href="/" className="block text-gray-400 hover:text-white transition-colors">
+                  Home
+                </a>
+                <a href="/" className="block text-gray-400 hover:text-white transition-colors">
+                  Projects
+                </a>
+                <span className="block text-white">About</span>
+                <a href="/contact" className="block text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Connect</h4>
+              <div className="space-y-3">
+                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                  <Twitter className="w-5 h-5" />
+                  <span>Twitter</span>
+                </a>
+                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                </a>
+                <a href="#" className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} Alex Johnson. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
