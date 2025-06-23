@@ -31,7 +31,8 @@
       "Bash(npm run format:check:*)",
       "Bash(npm run format:*)",
       "Bash(npx eslint:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(npx next lint:*)"
     ],
     "deny": []
   }

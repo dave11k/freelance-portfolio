@@ -181,9 +181,9 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 mb-8 max-w-5xl mx-auto leading-relaxed"
           >
-            I have 6 years of professional experience building efficient,
-            user-friendly, and high-performing web applications. I turn complex
-            ideas into clean and scalable solutions.
+            With 6 years of professional experience building user-friendly and
+            high-performing web applications, I can turn complex your ideas into
+            clean and scalable solutions.
             <br />
             <br />
             My core expertise lies in modern JavaScript development,

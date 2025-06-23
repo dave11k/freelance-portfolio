@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { Project } from "@/lib/projects";
+import ImageSlider from "@/components/image-slider";
 
 interface ProjectCardProps {
   project: Project;
@@ -23,14 +24,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
           <div className="relative overflow-hidden lg:col-span-1">
-            <img
-              src={project.videoUrl || "/placeholder.svg"}
-              alt={project.title}
-              className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+            <ImageSlider images={project.images} title={project.title} />
             {project.category && (
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <Badge
                   variant="secondary"
                   className="bg-white/90 text-gray-700 text-xs"
@@ -60,7 +56,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+              <Button
+                className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                onClick={() => window.open(project.projectUrl, "_blank")}
+              >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View Project
               </Button>
