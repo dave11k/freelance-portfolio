@@ -64,19 +64,21 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               <ExternalLink className="w-4 h-4 mr-2" />
               View Project
             </Button>
-            <Button
-              variant="ghost"
-              className={`justify-start ${!project.githubUrl ? "opacity-50 cursor-not-allowed" : ""}`}
-              disabled={!project.githubUrl}
-              onClick={() => {
-                if (project.githubUrl) {
-                  window.open(project.githubUrl, "_blank");
-                }
-              }}
-            >
-              <Github className="w-4 h-4 mr-2" />
-              View Code
-            </Button>
+            {project.githubUrl && (
+              <Button
+                variant="ghost"
+                className={`justify-start ${!project.githubUrl ? "opacity-50 cursor-not-allowed" : ""}`}
+                disabled={!project.githubUrl}
+                onClick={() => {
+                  if (project.githubUrl) {
+                    window.open(project.githubUrl, "_blank");
+                  }
+                }}
+              >
+                <Github className="w-4 h-4 mr-2" />
+                View Code
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>

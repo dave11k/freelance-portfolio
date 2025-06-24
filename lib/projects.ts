@@ -70,4 +70,33 @@ export const projects: Project[] = [
     projectUrl: "https://movie-mind-l83d.vercel.app/",
     category: "Web Application",
   },
+  {
+    id: 3,
+    title: "The Canning Collective",
+    description:
+      "The Canning Collective, a coaching business, " +
+      "needed a website overhaul as their existing digital presence didn't reflect their values, " +
+      "hindering online lead conversion. " +
+      "I launched a responsive, performance-optimized site within one month for seamless user experience. " +
+      "Integrated Google Reviews and embedded Calendly for enhanced trust and easy booking. " +
+      "Redesigned with a clean, aesthetic layout and modern animations to capture attention. " +
+      "Delivered a polished, high-converting website, empowering The Canning Collective to market online " +
+      "and turn leads into booked consultations effectively.",
+    technologies: [
+      "React",
+      "Next.js 15",
+      "Calendly",
+      "Tailwind CSS",
+      "Stripe",
+    ],
+    images: [
+      "/projects/the-canning-collective/hero.png",
+      "/projects/the-canning-collective/pricing.png",
+      "/projects/the-canning-collective/contact.png",
+      "/projects/the-canning-collective/testimonials.png",
+    ],
+    githubUrl: null,
+    projectUrl: "https://www.thecanningcollective.com/",
+    category: "Website",
+  },
 ];
