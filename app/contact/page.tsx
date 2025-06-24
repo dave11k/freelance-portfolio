@@ -15,14 +15,13 @@ import {
   Mail,
   MapPin,
   Send,
-  Menu,
-  X,
   ArrowRight,
 } from "lucide-react";
 import { useState } from "react";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
@@ -60,94 +59,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-2"
-            >
-              <a href="/" className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-900">David Kiely</h1>
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <span className="text-gray-600 hidden sm:inline">
-                  Full Stack Developer
-                </span>
-              </a>
-            </motion.div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="/"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="/projects"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Projects
-              </a>
-              <a
-                href="/about"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                About
-              </a>
-              <span className="text-emerald-600 font-medium">Contact</span>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2"
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="md:hidden py-4 border-t border-gray-100"
-            >
-              <div className="flex flex-col space-y-4">
-                <a
-                  href="/"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
-                >
-                  Home
-                </a>
-                <a
-                  href="/projects"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
-                >
-                  Projects
-                </a>
-                <a
-                  href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
-                >
-                  About
-                </a>
-                <span className="text-emerald-600 font-medium text-left">
-                  Contact
-                </span>
-              </div>
-            </motion.div>
-          )}
-        </div>
-      </nav>
+      <Navbar currentPage="contact" />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -455,78 +367,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
-              <p className="text-gray-400">
-                Full Stack Developer crafting scalable web applications
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <a
-                  href="/"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  Home
-                </a>
-                <a
-                  href="/projects"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  Projects
-                </a>
-                <a
-                  href="/about"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  About
-                </a>
-                <span className="block text-white">Contact</span>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
-                >
-                  <Twitter className="w-5 h-5" />
-                  <span>Twitter</span>
-                </a>
-                <a
-                  href="https://github.com/dave11k"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/david-kiely-dev/"
-                  className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>
-              &copy; {new Date().getFullYear()} David Kiely. All Rights
-              Reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

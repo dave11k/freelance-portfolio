@@ -67,7 +67,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.githubUrl && (
               <Button
                 variant="ghost"
-                className={`justify-start ${!project.githubUrl ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`justify-center sm:justify-start bg-gray-100 hover:bg-gray-200 sm:bg-transparent sm:hover:bg-gray-100 ${!project.githubUrl ? "opacity-50 cursor-not-allowed" : ""}`}
                 disabled={!project.githubUrl}
                 onClick={() => {
                   if (project.githubUrl) {

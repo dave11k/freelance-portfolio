@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
             <h3 className="text-lg font-semibold mb-4">David Kiely</h3>
             <p className="text-gray-400">
@@ -44,7 +44,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
-            <div className="space-y-3">
+            <div className="space-y-3 flex flex-col items-center md:items-start">
               <a
                 href="#"
                 className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"

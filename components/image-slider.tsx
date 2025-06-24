@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +11,8 @@ interface ImageSliderProps {
 
 export default function ImageSlider({ images, title }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -24,6 +26,29 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
     );
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && images.length > 1) {
+      goToNext();
+    }
+    if (isRightSwipe && images.length > 1) {
+      goToPrevious();
+    }
+  };
+
   if (!images || images.length === 0) {
     return (
       <div className="w-full h-64 lg:h-full bg-gray-200 flex items-center justify-center">
@@ -33,7 +58,12 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
   }
 
   return (
-    <div className="relative w-full h-56 sm:h-64 lg:h-80 overflow-hidden group">
+    <div
+      className="relative w-full h-56 sm:h-64 lg:h-80 overflow-hidden group"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         className="flex h-full transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -53,7 +83,7 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
           <Button
             variant="ghost"
             size="sm"
-            className="absolute left-2 top-1/2 -translate-y-1/2 opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
+            className="absolute left-2 top-1/2 -translate-y-1/2 opacity-60 sm:opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
             onClick={goToPrevious}
             aria-label="Previous image"
           >
@@ -63,14 +93,14 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
           <Button
             variant="ghost"
             size="sm"
-            className="absolute right-2 top-1/2 -translate-y-1/2 opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
+            className="absolute right-2 top-1/2 -translate-y-1/2 opacity-60 sm:opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
             onClick={goToNext}
             aria-label="Next image"
           >
             <ChevronRight className="w-4 h-4 text-gray-700" />
           </Button>
 
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 opacity-20 group-hover:opacity-100 transition-opacity duration-200 z-20">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 opacity-60 sm:opacity-20 group-hover:opacity-100 transition-opacity duration-200 z-20">
             {images.map((_, index) => (
               <button
                 key={index}

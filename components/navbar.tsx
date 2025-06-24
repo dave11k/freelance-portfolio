@@ -74,19 +74,21 @@ export default function Navbar({ currentPage = "home" }: NavbarProps) {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-4 border-t border-gray-100"
+            className="md:hidden fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100"
+            style={{ height: "50vh" }}
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col items-center justify-center h-full space-y-8 px-4">
               {navItems.map((item) => (
-                <div key={item.key}>
+                <div key={item.key} className="text-center">
                   {currentPage === item.key ? (
-                    <span className="text-emerald-600 font-medium text-left">
+                    <span className="text-emerald-600 font-semibold text-2xl">
                       {item.name}
                     </span>
                   ) : (
                     <a
                       href={item.href}
-                      className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
+                      className="text-gray-700 hover:text-emerald-600 transition-colors text-2xl font-medium"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
                     </a>
