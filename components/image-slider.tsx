@@ -45,7 +45,7 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
           <Button
             variant="ghost"
             size="sm"
-            className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
+            className="absolute left-2 top-1/2 -translate-y-1/2 opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
             onClick={goToPrevious}
             aria-label="Previous image"
           >
@@ -55,14 +55,14 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
           <Button
             variant="ghost"
             size="sm"
-            className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
+            className="absolute right-2 top-1/2 -translate-y-1/2 opacity-20 group-hover:opacity-100 transition-opacity duration-200 bg-white/80 hover:bg-white/90 p-1 h-auto z-20"
             onClick={goToNext}
             aria-label="Next image"
           >
             <ChevronRight className="w-4 h-4 text-gray-700" />
           </Button>
 
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 opacity-20 group-hover:opacity-100 transition-opacity duration-200 z-20">
             {images.map((_, index) => (
               <button
                 key={index}

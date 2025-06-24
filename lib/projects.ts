@@ -82,18 +82,34 @@ export const projects: Project[] = [
       "Redesigned with a clean, aesthetic layout and modern animations to capture attention. " +
       "Delivered a polished, high-converting website, empowering The Canning Collective to market online " +
       "and turn leads into booked consultations effectively.",
-    technologies: [
-      "React",
-      "Next.js 15",
-      "Calendly",
-      "Tailwind CSS",
-      "Stripe",
-    ],
+    technologies: ["React", "Next.js 15", "Calendly", "Tailwind CSS", "Stripe"],
     images: [
       "/projects/the-canning-collective/hero.png",
       "/projects/the-canning-collective/pricing.png",
       "/projects/the-canning-collective/contact.png",
       "/projects/the-canning-collective/testimonials.png",
+    ],
+    githubUrl: null,
+    projectUrl: "https://www.thecanningcollective.com/",
+    category: "Website",
+  },
+  {
+    id: 4,
+    title: "DJ Business Academy",
+    description:
+      "The DJ Business Academy needed a focused, mobile-optimized online presence to capture leads " +
+      "and seamlessly integrate with their CRM for efficient follow-up. " +
+      "Built a fully custom website from scratch in WordPress Elementor for design flexibility. " +
+      "Ensured full responsiveness and excellent mobile performance for seamless user experience. " +
+      "Integrated HubSpot with a custom popup form for effective lead generation and CRM integration. " +
+      "Delivered a polished, high-converting website, empowering The DJ Business Academy to market online " +
+      "and turn leads into booked consultations effectively.",
+    technologies: ["WordPress", "Elementor", "HubSpot"],
+    images: [
+      "/projects/dj-business-academy/hero.png",
+      "/projects/dj-business-academy/testimonials.png",
+      "/projects/dj-business-academy/footer.png",
+      "/projects/dj-business-academy/2.png",
     ],
     githubUrl: null,
     projectUrl: "https://www.thecanningcollective.com/",
