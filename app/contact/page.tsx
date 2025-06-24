@@ -34,17 +34,20 @@ export default function ContactPage() {
     setSubmitStatus("idle");
 
     try {
-      const formData = new FormData(e.currentTarget);
+      const form = e.currentTarget;
+      const formData = new FormData(form);
 
-      const response = await fetch("/", {
+      const response = await fetch(form.action, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
         setSubmitStatus("success");
-        (e.target as HTMLFormElement).reset();
+        form.reset();
       } else {
         setSubmitStatus("error");
       }
@@ -188,13 +191,11 @@ export default function ContactPage() {
                   </h2>
 
                   <form
-                    name="contact"
+                    action="https://formspree.io/f/mgvynrql"
                     method="POST"
-                    data-netlify="true"
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
-                    <input type="hidden" name="form-name" value="contact" />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label
