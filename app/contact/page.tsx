@@ -24,16 +24,35 @@ import { useState } from "react";
 export default function ContactPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const formData = new FormData(e.currentTarget);
 
-    setIsSubmitting(false);
-    // You can add success/error handling here
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -168,7 +187,14 @@ export default function ContactPage() {
                     Send Me a Message
                   </h2>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label
@@ -253,6 +279,33 @@ export default function ContactPage() {
                       )}
                     </Button>
                   </form>
+
+                  {/* Success/Error Messages */}
+                  {submitStatus === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg"
+                    >
+                      <p className="text-emerald-800 font-medium">
+                        Thank you! Your message has been sent successfully. I'll
+                        get back to you soon.
+                      </p>
+                    </motion.div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg"
+                    >
+                      <p className="text-red-800 font-medium">
+                        Sorry, there was an error sending your message. Please
+                        try again or contact me directly.
+                      </p>
+                    </motion.div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
@@ -277,7 +330,6 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-6">
-
                 {/* LinkedIn */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
