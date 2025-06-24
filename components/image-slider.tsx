@@ -33,11 +33,11 @@ export default function ImageSlider({ images, title }: ImageSliderProps) {
   }
 
   return (
-    <div className="relative w-full h-64 lg:h-full overflow-hidden group">
+    <div className="relative w-full h-56 sm:h-64 lg:h-80 overflow-hidden group">
       <img
         src={images[currentIndex]}
         alt={`${title} - Image ${currentIndex + 1}`}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover transition-transform duration-300"
       />
 
       {images.length > 1 && (

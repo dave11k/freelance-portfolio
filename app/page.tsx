@@ -97,21 +97,22 @@ export default function HomePage() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
+              <span className="text-emerald-600 font-medium">Home</span>
               <a
                 href="/projects"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 Projects
               </a>
               <a
                 href="/about"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 About
               </a>
               <a
                 href="/contact"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 Contact
               </a>
@@ -138,21 +139,24 @@ export default function HomePage() {
               className="md:hidden py-4 border-t border-gray-100"
             >
               <div className="flex flex-col space-y-4">
+                <span className="text-emerald-600 font-medium text-left">
+                  Home
+                </span>
                 <a
                   href="/projects"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   Projects
                 </a>
                 <a
                   href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   About
                 </a>
                 <a
                   href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   Contact
                 </a>
@@ -236,7 +240,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.slice(0, 6).map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
@@ -408,14 +412,14 @@ export default function HomePage() {
                   <span>Twitter</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/dave11k"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                 >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/david-kiely-28661765"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />

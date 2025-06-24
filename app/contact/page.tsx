@@ -277,34 +277,6 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-6">
-                {/* Direct Email */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="hover:shadow-lg transition-shadow duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                          <Mail className="w-6 h-6 text-emerald-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">
-                            Email Me Directly
-                          </h3>
-                          <a
-                            href="mailto:hello@alexjohnson.dev"
-                            className="text-emerald-600 hover:text-emerald-700 transition-colors"
-                          >
-                            hello@alexjohnson.dev
-                          </a>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
 
                 {/* LinkedIn */}
                 <motion.div
@@ -324,12 +296,12 @@ export default function ContactPage() {
                             Connect on LinkedIn
                           </h3>
                           <a
-                            href="https://linkedin.com/in/alexjohnson-dev"
+                            href="https://linkedin.com/in/david-kiely-dev"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-600 hover:text-blue-700 transition-colors"
                           >
-                            linkedin.com/in/alexjohnson-dev
+                            linkedin.com/in/david-kiely-dev
                           </a>
                         </div>
                       </div>
@@ -477,14 +449,14 @@ export default function ContactPage() {
                   <span>Twitter</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/dave11k"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                 >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/david-kiely-dev/"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />

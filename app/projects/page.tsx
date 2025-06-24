@@ -35,20 +35,20 @@ export default function ProjectsPage() {
             <div className="hidden md:flex items-center space-x-8">
               <a
                 href="/"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 Home
               </a>
               <span className="text-emerald-600 font-medium">Projects</span>
               <a
                 href="/about"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 About
               </a>
               <a
                 href="/contact"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-emerald-600 transition-colors"
               >
                 Contact
               </a>
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
               <div className="flex flex-col space-y-4">
                 <a
                   href="/"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   Home
                 </a>
@@ -86,13 +86,13 @@ export default function ProjectsPage() {
                 </span>
                 <a
                   href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   About
                 </a>
                 <a
                   href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors text-left"
                 >
                   Contact
                 </a>
@@ -130,7 +130,7 @@ export default function ProjectsPage() {
       {/* All Projects Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
