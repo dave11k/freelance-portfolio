@@ -112,7 +112,7 @@ export const projects: Project[] = [
       "/projects/dj-business-academy/2.png",
     ],
     githubUrl: null,
-    projectUrl: "https://www.thecanningcollective.com/",
+    projectUrl: "https://djbusinessacademy.com/",
     category: "Website",
   },
 ];
